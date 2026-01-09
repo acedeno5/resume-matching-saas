@@ -1,60 +1,76 @@
-# Real-Time Multiplayer Game Server  
-A high-performance real-time game server with matchmaking, WebSocket networking, and state synchronization. Built to demonstrate systems design, concurrency, and networking skills used at Google and Meta.
+# AI-Powered Résumé Matcher SaaS  
+Full-stack application that scores résumés against job descriptions using NLP, ML embeddings, and keyword weighting. Built as a deployable SaaS product with frontend UI, backend API, and database.
 
-## 🕹️ Features
-- Real-time WebSocket communication  
-- Matchmaking queue  
-- Game-loop engine with consistent tick rate  
-- Concurrent player session handling  
-- Client-side rendering + gameplay logic  
-- Fault-tolerant server architecture  
+## 🎯 Purpose
+Provide job seekers with:
+- Job match scores  
+- Keyword optimization suggestions  
+- Missing skills analysis  
+- Tailored résumé recommendations  
+
+## 🧠 Core Features
+- NLP processing using spaCy + TF-IDF + embeddings  
+- Résumé parsing + cleaning  
+- Job description similarity scoring  
+- Keyword extraction + ranking  
+- Web dashboard for viewing results  
+- REST API for scoring jobs programmatically  
 
 ## 🛠️ Tech Stack
 ### Backend:
-- Node.js / Java / Python (your choice)
-- WebSocket server
-- Redis (for game state + session caching)
+- Python, FastAPI / Flask  
+- spaCy, Scikit-learn  
+- Pandas  
+- PostgreSQL  
 
 ### Frontend:
-- React  
-- WebSockets client  
+- React + Vite  
+- TailwindCSS  
+- Chart.js for analytics dashboards  
+
+### DevOps:
+- Dockerized frontend + backend  
+- Nginx reverse proxy  
+- GitHub Actions CI/CD (optional)
 
 ## 📁 Folder Structure
 ```
-multiplayer-game-server/
- ├── server/
- ├── client/
- ├── scripts/
- └── docs/
+resume-matching-saas/
+ ├── backend/
+ ├── frontend/
+ ├── database/
+ └── docker/
 ```
 
-## 🧩 Architecture Breakdown
-- **Matchmaking module** — queues players + forms balanced matches  
-- **Game loop** — physics/state updates at fixed intervals  
-- **State sync** — delta compression + client reconciliation  
-- **Tick engine** — 30–60 updates/s  
-- **Redis caching** — fast session lookups  
+## 🧪 ML Pipeline
+1. Tokenize résumé + JD  
+2. Extract keywords  
+3. Generate embeddings  
+4. Compute similarity score  
+5. Rank strengths + missing skills  
 
-## ▶️ Running the Server
+## ▶️ Run Locally
+
+### Backend
 ```bash
-cd server
-npm install
-npm start
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
 ```
 
-## ▶️ Running the Client
+### Frontend
 ```bash
-cd client
+cd frontend
 npm install
 npm run dev
 ```
 
-## 🧪 Testing Strategy
-- Load tests for 100+ concurrent players  
-- Mock WebSocket clients for simulation  
-- Matchmaking unit tests  
+### Docker (Full Stack)
+```bash
+docker-compose up --build
+```
 
 ## 🚀 Future Enhancements
-- Add spectator mode  
-- Implement ranking system  
-- Add anti-cheat validation layer  
+- User login + profile history  
+- PDF résumé parser w/ layout detection  
+- AI-generated résumé rewrite suggestions  
